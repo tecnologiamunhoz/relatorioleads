@@ -292,7 +292,7 @@ app.get("/", async (req, res) => {
   if(hour == "19"){ // Email e Whatsapp
     arr.forEach(mensagemFormatadaWhatsapp)
     run(arr);
-  } else if(hour == "09") { // Email
+  } else if(hour == "10") { // Email
     run(arr);
   }
 });
@@ -305,7 +305,7 @@ const api = axios.create({baseURL: 'http://localhost:1337'});
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
   console.log(hour);
-  if(hour == "09:00:00" || hour == "19:00:00" || hour == "10:00:00 AM" || hour == "10:00:00 AM" || hour == "09:38:00 AM" ){
+  if(hour == "09:00:00" || hour == "19:00:00" || hour == "10:00:00 AM" || hour == "10:12:00" || hour == "10:12:00 AM") {
     try {
       await api.get("/");
       console.log("Relatório Enviado")
