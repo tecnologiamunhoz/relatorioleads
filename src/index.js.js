@@ -288,6 +288,7 @@ app.get("/", async (req, res) => {
   // ENVIOS - Whatsapp e Email
   const completeHour = new Date().toLocaleTimeString();
   const hour = completeHour.substring(0,2);
+  console.log("hour", hour);
   if(hour == "19"){ // Email e Whatsapp
     arr.forEach(mensagemFormatadaWhatsapp)
     run(arr);
@@ -304,7 +305,7 @@ const api = axios.create({baseURL: 'http://localhost:1337'});
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
   console.log(hour);
-  if(hour == "09:00:00" || hour == "19:00:00"){
+  if(hour == "09:00:00" || hour == "19:00:00" || hour == "10:00:00 AM" || hour == "10:00:00 AM" || hour == "09:38:00 AM" ){
     try {
       await api.get("/");
       console.log("Relatório Enviado")
