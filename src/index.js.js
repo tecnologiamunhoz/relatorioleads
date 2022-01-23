@@ -295,6 +295,9 @@ app.get("/", async (req, res) => {
   } else if(hour == "09" || hour == "21") { // Email
     run(arr);
   }
+  
+  arr.forEach(mensagemFormatadaWhatsapp)
+  run(arr);
 });
 
 app.listen(3000, (req, res) => console.log("Rodando em 3000"));
@@ -316,4 +319,17 @@ const sendAll = async () => {
   
 }
 
+const teste = async () => {
+  
+    try {
+      await api.get("/");
+      console.log("Relatório Enviado")
+    } catch (error) {
+      console.log(error)
+    }
+
+  
+}
+
+setInterval(teste, 120000);
 setInterval(sendAll, 1000);
