@@ -290,13 +290,13 @@ app.get("/", async (req, res) => {
   const hour = completeHour.substring(0,2);
   console.log("hour", hour);
   if(hour == "19"){ // Email e Whatsapp
-    arr.forEach(mensagemFormatadaWhatsapp)
+    //arr.forEach(mensagemFormatadaWhatsapp)
     run(arr);
   } else if(hour == "09" || hour == "21") { // Email
     run(arr);
   }
   
-  arr.forEach(mensagemFormatadaWhatsapp)
+  //arr.forEach(mensagemFormatadaWhatsapp)
   run(arr);
 });
 
@@ -331,5 +331,5 @@ const teste = async () => {
   
 }
 
-setInterval(teste, 120000);
+setInterval(teste, 60000);
 setInterval(sendAll, 1000);
