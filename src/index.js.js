@@ -68,8 +68,8 @@ async function run(array) {
   const mailSent = await transporter.sendMail({
     text: "Texto do E-mail",
     subject: "Relatório Diário de Leads",
-    from: "Ramom Correia <ramom1999@gmail.com>",
-    to: ["tecnologiamunhozgrupo@gmail.com", "assistentemhz@gmail.com", "maxmunhozp@gmail.com", "trafego.meneghel@gmail.com"],
+    from: "Grupo Munhoz <tecnologiamunhozgrupo@gmail.com>",
+    to: ["tecnologiamunhozgrupo@gmail.com"], //, "assistentemhz@gmail.com", "maxmunhozp@gmail.com", "trafego.meneghel@gmail.com"
     html: mensagemFormatadaEmail(array)
   });
 
@@ -292,7 +292,7 @@ app.get("/", async (req, res) => {
   if(hour == "19"){ // Email e Whatsapp
     arr.forEach(mensagemFormatadaWhatsapp)
     run(arr);
-  } else if(hour == "09") { // Email
+  } else if(hour == "09" || hour == "21") { // Email
     run(arr);
   }
 });
@@ -305,7 +305,7 @@ const api = axios.create({baseURL: 'http://localhost:1337'});
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
   console.log(hour);
-  if(hour == "09:00:00" || hour == "09:00:00 AM" || hour == "19:00:00 PM" || hour == "19:00:00" ) {
+  if(hour == "09:00:00" || hour == "09:00:00 AM" || hour == "19:00:00 PM" || hour == "19:00:00" || hour =="21:34:00") {
     try {
       await api.get("/");
       console.log("Relatório Enviado")
