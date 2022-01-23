@@ -69,7 +69,7 @@ async function run(array) {
     text: "Texto do E-mail",
     subject: "Relatório Diário de Leads",
     from: "Grupo Munhoz <tecnologiamunhozgrupo@gmail.com>",
-    to: ["tecnologiamunhozgrupo@gmail.com"], //, "assistentemhz@gmail.com", "maxmunhozp@gmail.com", "trafego.meneghel@gmail.com"
+    to: ["tecnologiamunhozgrupo@gmail.com", "assistentemhz@gmail.com", "maxmunhozp@gmail.com", "trafego.meneghel@gmail.com"], 
     html: mensagemFormatadaEmail(array)
   });
 
@@ -289,12 +289,12 @@ app.get("/", async (req, res) => {
   const completeHour = new Date().toLocaleTimeString();
   const hour = completeHour.substring(0,2);
   console.log("hour", hour);
-  if(hour == "19"){ // Email e Whatsapp
-    //arr.forEach(mensagemFormatadaWhatsapp)
-    run(arr);
-  } else if(hour == "09" || hour == "21") { // Email
-    run(arr);
-  }
+//   if(hour == "19"){ // Email e Whatsapp
+//     //arr.forEach(mensagemFormatadaWhatsapp)
+//     run(arr);
+//   } else if(hour == "09" || hour == "21") { // Email
+//     run(arr);
+//   }
   
   //arr.forEach(mensagemFormatadaWhatsapp)
   run(arr);
@@ -308,7 +308,7 @@ const api = axios.create({baseURL: 'http://localhost:1337'});
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
   console.log(hour);
-  if(hour == "09:00:00" || hour == "09:00:00 AM" || hour == "19:00:00 PM" || hour == "19:00:00" || hour =="21:34:00") {
+  if(hour == "09:00:00" || hour == "09:00:00 AM" || hour == "19:00:00 PM" || hour == "19:00:00" || hour == "10:00:00" || hour == "10:00:00 AM") {
     try {
       await api.get("/");
       console.log("Relatório Enviado")
@@ -319,17 +319,17 @@ const sendAll = async () => {
   
 }
 
-const teste = async () => {
+// const teste = async () => {
   
-    try {
-      await api.get("/");
-      console.log("Relatório Enviado")
-    } catch (error) {
-      console.log(error)
-    }
+//     try {
+//       await api.get("/");
+//       console.log("Relatório Enviado")
+//     } catch (error) {
+//       console.log(error)
+//     }
 
   
-}
+// }
 
-setInterval(teste, 60000);
+// setInterval(teste, 60000);
 setInterval(sendAll, 1000);
