@@ -300,10 +300,10 @@ app.get("/", async (req, res) => {
   run(arr);
 });
 
-app.listen(3000, (req, res) => console.log("Rodando em 3000"));
+app.listen(1337, (req, res) => console.log("Rodando em 1337"));
 
 // Lógica do envio em determinado horário
-const api = axios.create({baseURL: 'http://localhost:3000'});
+const api = axios.create({baseURL: 'http://localhost:1337'});
 
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
