@@ -69,7 +69,7 @@ async function run(array) {
     text: "Texto do E-mail",
     subject: "Relatório Diário de Leads",
     from: "Grupo Munhoz <tecnologiamunhozgrupo@gmail.com>",
-    to: ["tecnologiamunhozgrupo@gmail.com", "assistentemhz@gmail.com", "maxmunhozp@gmail.com", "trafego.meneghel@gmail.com"], 
+    to: ["tecnologiamunhozgrupo@gmail.com"], //, "assistentemhz@gmail.com", "maxmunhozp@gmail.com", "trafego.meneghel@gmail.com"
     html: mensagemFormatadaEmail(array)
   });
 
