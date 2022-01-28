@@ -308,34 +308,17 @@ const api = axios.create({baseURL: 'http://18.228.235.133:1337'});
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
   console.log(hour);
-//   if(hour == "09:00:00" || hour == "09:00:00 AM" || hour == "07:00:00 PM" || hour == "19:00:00" || hour == "10:00:00" || hour == "10:00:00 AM" || hour == "04:00:00 PM") {
-//     try {
-//       await api.get("/");
-//       console.log("Relatório Enviado")
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
-  try {
+  if(hour == "00:00:00 PM" || hour == "00:00:00" || hour == "10:00:00 PM" || hour == "10:00:00" || hour == "7:28:00 PM") {
+    try {
       await api.get("/");
       console.log("Relatório Enviado")
     } catch (error) {
       console.log(error)
     }
-  
+  }
 }
 
-// const teste = async () => {
-  
-//     try {
-//       await api.get("/");
-//       console.log("Relatório Enviado")
-//     } catch (error) {
-//       console.log(error)
-//     }
+setInterval(sendAll, 1000);
 
-  
-// }
-
-// setInterval(teste, 60000);
-setInterval(sendAll, 50000);
+// 19 UTC -> 16:00 BR
+//19 UTC -> 7:00:00 PM (no linux)
