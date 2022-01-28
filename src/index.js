@@ -303,19 +303,25 @@ app.get("/", async (req, res) => {
 app.listen(1337, (req, res) => console.log("Rodando em 1337"));
 
 // Lógica do envio em determinado horário
-const api = axios.create({baseURL: 'http://localhost:1337'});
+const api = axios.create({baseURL: 'http://18.228.235.133:1337'});
 
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
   console.log(hour);
-  if(hour == "09:00:00" || hour == "09:00:00 AM" || hour == "07:00:00 PM" || hour == "19:00:00" || hour == "10:00:00" || hour == "10:00:00 AM" || hour == "04:00:00 PM") {
-    try {
+//   if(hour == "09:00:00" || hour == "09:00:00 AM" || hour == "07:00:00 PM" || hour == "19:00:00" || hour == "10:00:00" || hour == "10:00:00 AM" || hour == "04:00:00 PM") {
+//     try {
+//       await api.get("/");
+//       console.log("Relatório Enviado")
+//     } catch (error) {
+//       console.log(error)
+//     }
+//   }
+  try {
       await api.get("/");
       console.log("Relatório Enviado")
     } catch (error) {
       console.log(error)
     }
-  }
   
 }
 
@@ -332,4 +338,4 @@ const sendAll = async () => {
 // }
 
 // setInterval(teste, 60000);
-setInterval(sendAll, 1000);
+setInterval(sendAll, 50000);
