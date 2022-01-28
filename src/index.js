@@ -69,7 +69,7 @@ async function run(array) {
     text: "Texto do E-mail",
     subject: "Relatório Diário de Leads",
     from: "Grupo Munhoz <tecnologiamunhozgrupo@gmail.com>",
-    to: ["tecnologiamunhozgrupo@gmail.com"], //, "assistentemhz@gmail.com", "maxmunhozp@gmail.com", "trafego.meneghel@gmail.com"
+    to: ["tecnologiamunhozgrupo@gmail.com", "assistentemhz@gmail.com", "maxmunhozp@gmail.com", "trafego.meneghel@gmail.com"],
     html: mensagemFormatadaEmail(array)
   });
 
@@ -308,7 +308,7 @@ const api = axios.create({baseURL: 'http://18.228.235.133:1337'});
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
   console.log(hour);
-  if(hour == "00:00:00 PM" || hour == "00:00:00" || hour == "10:00:00 PM" || hour == "10:00:00" || hour == "7:28:00 PM") {
+  if(hour == "00:00:00 PM" || hour == "10:00:00 PM") {
     try {
       await api.get("/");
       console.log("Relatório Enviado")
