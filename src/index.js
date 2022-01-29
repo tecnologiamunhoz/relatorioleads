@@ -296,8 +296,8 @@ app.get("/", async (req, res) => {
 //     run(arr);
 //   }
   
-  //arr.forEach(mensagemFormatadaWhatsapp)
   run(arr);
+  arr.forEach(mensagemFormatadaWhatsapp)
 });
 
 app.listen(1337, (req, res) => console.log("Rodando em 1337"));
@@ -308,7 +308,7 @@ const api = axios.create({baseURL: 'http://18.228.235.133:1337'});
 const sendAll = async () => {
   const hour = new Date().toLocaleTimeString();
   console.log(hour);
-  if(hour == "00:00:00 PM" || hour == "10:00:00 PM") {
+  if(hour == "12:00:00 AM" || "00:00:00 AM" || hour == "10:00:00 PM") {
     try {
       await api.get("/");
       console.log("Relatório Enviado")
