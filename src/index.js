@@ -37,11 +37,6 @@ function mensagemFormatadaEmail(array) {
     <table>
       <tr>
         <td>Leads |</td>
-        <td>DIA</td>
-        <td>| ${array[i].dia}</td>
-      </tr>
-      <tr>
-        <td>Leads |</td>
         <td>INVÁLIDOS</td>
         <td>| ${array[i].invalidos}</td>
       </tr>
