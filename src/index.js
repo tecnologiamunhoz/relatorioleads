@@ -313,7 +313,7 @@ const sendAll = async () => {
   }
 }
 
-setInterval(sendAll, 1000);
+// setInterval(sendAll, 1000);
 
 // 19 UTC -> 16:00 BR
 //19 UTC -> 7:00:00 PM (no linux)
