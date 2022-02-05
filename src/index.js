@@ -292,7 +292,7 @@ app.get("/", async (req, res) => {
 //   }
   
   run(arr);
-  arr.forEach(mensagemFormatadaWhatsapp)
+//   arr.forEach(mensagemFormatadaWhatsapp)
 });
 
 app.listen(1337, (req, res) => console.log("Rodando em 1337"));
